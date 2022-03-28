@@ -16,7 +16,7 @@ async def ytdl(_, message):
     try:
         if userLastDownloadTime > datetime.now():
             wait_time = round((userLastDownloadTime - datetime.now()).total_seconds() / 60, 2)
-            await message.reply_text(f"`Wait {wait_time} Minutes dusra maat daal aa aa aa`")
+            await message.reply_text(f"`Wait {wait_time} Minutes before next Request`")
             return
     except:
         pass
@@ -31,7 +31,7 @@ async def ytdl(_, message):
                                      timedelta(minutes=youtube_next_fetch)
 
     except Exception:
-        await message.reply_text("` ... 😔 ..\n#දෝෂයකි\n\nFailed To Fetch Youtube Data... 😔 \nPossible Youtube Blocked out land ip \n#error`")
+        await message.reply_text("`😔 \n.\n\n\nFailed To Fetch Youtube Data... 😔 \nPossible Youtube Blocked server ip \n#error`")
         return
     buttons = InlineKeyboardMarkup(list(create_buttons(formats)))
     sentm = await message.reply_text(" 👩‍🔧👩‍🔧\n\nProcessing Youtube Url 👩‍🔧👩‍🔧")
@@ -54,4 +54,3 @@ async def ytdl(_, message):
         except Exception as e:
             await sentm.edit(
             f"<code>{e}</code> #Error")
-
