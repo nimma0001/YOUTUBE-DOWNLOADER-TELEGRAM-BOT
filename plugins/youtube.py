@@ -16,7 +16,7 @@ async def ytdl(_, message):
     try:
         if userLastDownloadTime > datetime.now():
             wait_time = round((userLastDownloadTime - datetime.now()).total_seconds() / 60, 2)
-            await message.reply_text(f"`Wait {wait_time} Minutes before next Request`")
+            await message.reply_text(f"`Wait {wait_time} Minutes dusra maat daal aa aa aa`")
             return
     except:
         pass
@@ -31,10 +31,10 @@ async def ytdl(_, message):
                                      timedelta(minutes=youtube_next_fetch)
 
     except Exception:
-        await message.reply_text("`යූටියුබ් දත්ත ලබා ගැනීමට අසමත් විය ... 😔 \nයූටියුබ් සේවාදායකය අවහිර වී ඇත..\n#දෝෂයකි\n\nFailed To Fetch Youtube Data... 😔 \nPossible Youtube Blocked server ip \n#error`")
+        await message.reply_text("` ... 😔 ..\n#දෝෂයකි\n\nFailed To Fetch Youtube Data... 😔 \nPossible Youtube Blocked out land ip \n#error`")
         return
     buttons = InlineKeyboardMarkup(list(create_buttons(formats)))
-    sentm = await message.reply_text("ලින්කුව සොයමින් 👩‍🔧👩‍🔧\n\nProcessing Youtube Url 👩‍🔧👩‍🔧")
+    sentm = await message.reply_text(" 👩‍🔧👩‍🔧\n\nProcessing Youtube Url 👩‍🔧👩‍🔧")
     try:
         # Hiruwa
         img = wget.download(thumbnail_url)
